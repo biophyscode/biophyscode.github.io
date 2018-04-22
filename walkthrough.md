@@ -9,7 +9,7 @@ order: 4
 
 # Simulation-analysis pipeline
 
-This walkthrough covers the use of the factory as a single pipeline for creating and analying simulations. To run the walkthrough, users must first create a factory and then create a new omnicalc project. There is both a [quickstart guide]({{site.baseurl}}#factory) and [unit test]{{ site.baseurl }}/validation/#create_factory) available for starting the factory. All paths in this guide are relative to the factory location. Next we will explain how to set up a new omnicalc project, and after that, we will run a simulation and analyze it inside the graphical user interface.
+This walkthrough covers the use of the factory as a single pipeline for creating and analying simulations. To run the walkthrough, users must first create a factory and then create a new omnicalc project. There is both a [quickstart guide]({{ site.baseurl }}/#factory) and [unit test]{{ site.baseurl }}/validation/#create_factory) available for starting the factory. All paths in this guide are relative to the factory location. Next we will explain how to set up a new omnicalc project, and after that, we will run a simulation and analyze it inside the graphical user interface.
 
 ## Making a new omnicalc project
 
@@ -91,7 +91,7 @@ make run demo public
 
 You can reconnect as many times as you want since this procedure does not erase any data. You can reconnect to change the factory to a public port, or to change paths. You can run as many factory projects as you want and then stop them individually with `make shutdown demo` or together with `make shutdown`. Since these jobs run in the background, you can also use `make show_running_factories` to see their process ID numbers.
 
-In the following walkthrough we will be using codes which have been shared on github at the [`omni-basic`](http://github.com/biophyscode/omni-basic) repository. These files were shared according to instructions in the [calculation guide]({{site.baseurl}}#share_calculations). We told omnicalc to clone this repository by setting the `repo` key in the connection file. If you instead set `repo: calc/PROJECT_NAME/calcs` then omnicalc will make a blank repository at `factory/calc/demo/calcs` for you to add your calculations instead. This guide uses preexisting codes as a demonstration.
+In the following walkthrough we will be using codes which have been shared on github at the [`omni-basic`](http://github.com/biophyscode/omni-basic) repository. These files were shared according to instructions in the [calculation guide]({{ site.baseurl }}/#share_calculations). We told omnicalc to clone this repository by setting the `repo` key in the connection file. If you instead set `repo: calc/PROJECT_NAME/calcs` then omnicalc will make a blank repository at `factory/calc/demo/calcs` for you to add your calculations instead. This guide uses preexisting codes as a demonstration.
 
 The method above corresponds to the [`demo serve` unit test]{{ site.baseurl }}/validation#demo_serve), while the remainder of the guide is meant to be performed on the web interface.
 

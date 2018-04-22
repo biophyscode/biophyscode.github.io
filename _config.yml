@@ -2,8 +2,10 @@
 title: BioPhysCode
 description: >
   Web portal for the biophyscode project.
+#! `rake test` to check links
 #! change Rakefile if you change baseurl
-baseurl: "/"
+#! use empty instead of "/" to pass `rake test`
+baseurl: ""
 github_username:  biophyscode
 highlighter: rouge
 # build settings
