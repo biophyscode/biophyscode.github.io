@@ -1,0 +1,48 @@
+<h2 id="{{ report.when }}" style="font-family:monospace;"><a name="{{report.when}}"></a>
+{{ report.when }}
+</h2>
+
+<a class="bubble_light" href="{{ site.baseurl }}/test_reports/{{ report.when }}.html" target="_blank">full report</a>
+<span class="bubble_light" >completed {{ report.when | date: "%Y %b %d" | upcase }}</span>
+
+{% if report.note %}{{ report.note }}{% endif %} 
+
+{% if report.validations.automatic %}
+<h3>Automatic tests</h3>
+<ol>
+{% for valid in report.validations.automatic %}
+{% assign lookup_validation = site.data.validations | where: "short", valid.tag  | first %}
+<li><a href="{{ site.baseurl }}/validation/#{{ valid.tag }}">{{ lookup_validation.name | capitalize }}</a></li>
+{% endfor %}
+</ol>
+{% endif %}
+
+{% if report.validations.automatic %}
+<h3>Interface tests</h3>
+<ol>
+{% for valid in report.validations.interface %}
+{% assign lookup_validation = site.data.validations | where: "short", valid.tag  | first %}
+<li><a href="{{ site.baseurl }}/validation/#{{ valid.tag }}">{{ lookup_validation.name | capitalize }}</a></li>
+{% endfor %}
+</ol>
+{% endif %}
+
+{% if report.amx %}
+<h3>Automacs experiment tests</h3>
+<pre>
+<table align="left">
+<thead>
+<tr align="left">
+<th>experiment</th><th>kickstart</th><th>docker</th>
+</tr>
+</thead>
+{% for test in report.amx %}
+<tr>
+<td>{{ test.name }}</td><td>{{ test.kickstarter }}</td><td>{{ test.docker }}</td>
+</tr>
+{% endfor %}
+</table>
+</pre>
+<br>
+{% endif %}
+

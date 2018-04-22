@@ -1,0 +1,20 @@
+# Site settings
+title: BioPhysCode
+description: >
+  Web portal for the biophyscode project.
+#! change Rakefile if you change baseurl
+baseurl: "/"
+github_username:  biophyscode
+highlighter: rouge
+# build settings
+markdown: kramdown
+collections:
+  posts:
+    output: true
+    permalink: /posts/:path.html
+  articles:
+    output: true
+    permalink: /articles/:title.html
+  test_reports:
+    output: true
+    permalink: /test_reports/:title.html

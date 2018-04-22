@@ -1,0 +1,92 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+// $base-font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $base-font-family: 'Arvo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $base-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $base-font-family: 'PT Sans', sans-serif;
+// $base-font-family: 'Merriweather', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $base-font-family: 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $base-font-family: sans-serif;
+// $base-font-family: Helvetica, sans-serif;
+// $base-font-family: Arial, sans-serif;
+// $base-font-family: 'Helvetica Neue', sans-serif;
+$base-font-family: sans-serif;
+$base-font-headers: 'Roboto Slab';
+$base-condensed: sans-serif;
+
+$base-font-size:   14px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+// brand was previously: #6c3483; but this pink is nice #C70039;
+$brand-color:      #6c3483;
+$background-code-color:    lighten($brand-color, 55%);
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+$brand-color-light: lighten($brand-color, 30%);
+
+
+// custom colors
+$special-color:    #6666FF;
+
+
+// Width of the content area
+$content-width:    700px;
+
+$on-palm:          400px;
+$on-laptop:        700px;
+
+// Use media queries like this: @import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
+//@include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+//}
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+// Google fonts 
+// roboto slab, arvo
+
+// @import 'https://fonts.googleapis.com/css?family=Bungee+Shade';
+// @import 'https://fonts.googleapis.com/css?family=Assistant';
+// @import url(https://fonts.googleapis.com/css?family=Merriweather);
+// @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+// @import url(https://fonts.googleapis.com/css?family=PT+Sans);
+// @import url(https://fonts.googleapis.com/css?family=Crimson+Text);
+// @import url(https://fonts.googleapis.com/css?family=Arvo);
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+// @import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
+// @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+
+// note that this is an alternate to the highlit class and script in head.html for emphasizing links
+:target {
+   background-color: #ffa;
+}
+mark { background-color: #ffa; }

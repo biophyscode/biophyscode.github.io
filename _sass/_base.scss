@@ -1,0 +1,332 @@
+// By RPB
+
+h1, h2, h3, h3, h5, h6 {
+    font-family: $base-font-headers;
+}
+
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-condensed;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $base-font-weight;
+}
+
+h1 { border-bottom: 6px $brand-color-light groove;}
+
+
+
+/**
+ * Links
+ */
+a {
+    // color: $brand-color;
+    color: black;
+
+    //
+    //text-decoration: none;
+
+    //
+    // font-weight: 600;
+    // text-decoration-style: underline;
+    // text-decoration-color: $brand-color;
+
+    //
+    // text-decoration: none;
+    // border-bottom: 2px solid $brand-color-light;
+
+    border-bottom: 0px solid $brand-color-light;
+    box-shadow: inset 0 -2px 0 $brand-color-light;
+    color: inherit;
+    text-decoration:none;
+    &:hover{
+        background-color: $background-code-color;
+        text-decoration: none;
+    }
+
+    // text-decoration: none;
+    // text-decoration:underline;
+    // padding-bottom: 3px;
+    // border-bottom: solid 2px #000000;
+    // line-height: 0.8em;
+    // border-bottom: 3px solid #000;
+    // padding-bottom: -3px;
+    // box-shadow:0 3px gray;
+    // border-bottom-color:gray;
+
+    //&:visited {
+    //    color: darken($brand-color, 15%);
+    //}
+
+    //&:hover {
+    //    color: $text-color;
+    //    text-decoration: underline;
+    //}
+}
+ 
+blockquote {
+    color: black;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-style: italic;
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Add to css/syntax.css REMOVED OTHER STUFFS! */
+.highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
+.highlight pre code { 
+    display: block; white-space: pre; overflow-x: auto; word-wrap: normal; background-color: $background-code-color; 
+    /* this was suppressing horizontal scroll bars on wide code: overflow: hidden;*/
+    }
+
+code { 
+    background-color: $background-code-color; 
+    font: 400 14px/1.0 monospace
+}
+
+
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.icon {
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+/* RPB ADDITIONS */
+
+.imager_tile {
+    float:left;
+    padding-right:10px;
+    max-width:50%;
+    border-bottom:2px solid gray;
+    border-right:2px solid gray;
+    border-left:2px solid gray;
+    border-top:2px solid gray;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    padding-right:10px;
+    margin-right:20px;
+    box-shadow: 
+    1px 1px 0px 0px $brand-color-light,
+    2px 2px 0px 0px $brand-color-light,
+    3px 3px 0px 0px $brand-color-light,
+    4px 4px 0px 0px $brand-color-light,
+    5px 5px 0px 0px $brand-color-light,
+    6px 6px 0px 0px $brand-color-light,
+    7px 7px 0px 0px $brand-color-light,
+    8px 8px 0px 0px $brand-color-light;
+
+    @include media-query($on-laptop) {
+        float:left;
+        padding-top:10px;
+        min-width: 90%;
+        padding-bottom:10px;
+        margin-bottom:10px;
+        padding-top:10px;
+        margin-top:10px;
+        > img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.tile_grouping {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.floater_small { 
+    color: black;
+    font-weight: 400;
+    img { border-color: grey; }
+    width: 50%;
+    > img { max-width:50%;max-height:100px;height:auto;width:auto;margin-right:10px;float:left }
+    @include media-query($on-laptop) {
+        width:100%;
+    }
+}
+
+.floater_large { 
+    color: black;
+    font-weight: 400;
+    img { border-color: grey; }
+    width: 100%;
+    > img { max-width:50%;max-height:100px;height:auto;width:auto;margin-right:10px;float:left }
+    @include media-query($on-palm) {
+        > .floater_inset_text { float:left;margin-top: $spacing-unit/2; }
+        > img { max-width:100%; }
+    }
+}
+
+.highlit {
+    border-bottom:2px solid gray;
+    border-right:2px solid gray;
+    border-left:2px solid gray;
+    border-top:2px solid gray;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    padding-right:10px;
+    margin-right:20px;
+    box-shadow: 
+    1px 1px 0px 0px $brand-color-light,
+    2px 2px 0px 0px $brand-color-light,
+    3px 3px 0px 0px $brand-color-light,
+    4px 4px 0px 0px $brand-color-light,
+    5px 5px 0px 0px $brand-color-light,
+    6px 6px 0px 0px $brand-color-light,
+    7px 7px 0px 0px $brand-color-light,
+    8px 8px 0px 0px $brand-color-light;
+    margin-bottom: 20px;
+}
+
+.bubble {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: $brand-color-light;
+    color: black;
+    text-align: center;
+    padding: 2px 4px 1px 4px;
+    font-size: 0.9em;
+}
+
+.bubble_light {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #D3D3D3;
+    color: black;
+    text-align: center;
+    padding: 2px 4px 1px 4px;
+    font: 400 12px/1.0 monospace
+}
+
+.language-python { 
+    font: 400 12px/1.0 monospace
+    //line-height: 1.0; 
+    }
+
+table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+   padding: 6px;
+}
+

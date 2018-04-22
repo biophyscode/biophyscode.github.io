@@ -1,0 +1,9 @@
+---
+layout: blank
+---
+
+{% for item in page.raw %}
+# {{ item[0] }}
+
+{{ item[1] | markdownify }}
+{% endfor %}

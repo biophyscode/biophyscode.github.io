@@ -1,0 +1,36 @@
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { border: 1px gray none; width: 100%; empty-cells: show; border-spacing: 0em 0.1em; margin: 1em 0em; font-size: 1.0em;}
+th, td { border: none; padding-left: 0.0em; padding-bottom: 0.5em; vertical-align: top; text-align: left; }
+
+td a { color: navy; text-decoration: none; border-bottom: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+/* formerly used a lighter gray #EFEFEF for highlighting text */
+tr.highlight td { background-color: #FFFFFF; border-top: 0px #2E2E2E solid; font-weight: 400; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #d5d5d5; text-align: left; border-bottom: 0px #2E2E2E solid; font-size: 1.0em; padding: 1.0em;}
+tr.nextshow td { border-bottom-style: none; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}

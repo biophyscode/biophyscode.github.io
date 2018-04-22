@@ -1,0 +1,11 @@
+<div>
+<div class="imager_tile">
+<a name="{{ include.key }}"></a>
+<img style="max-height:250px;max-width:100%;padding:0px;border: 0px solid gray;" src="{{ site.baseurl }}/{{ include.image }}" border="0">
+<br><caption>{{ include.subcap }}</caption>
+</div>
+<p style="margin-left:10px;">
+<h2>{{ include.title | markdownify }}</h2>
+{{ include.caption | markdownify }}
+</p></p>
+</div><div style="clear:both;"></div>

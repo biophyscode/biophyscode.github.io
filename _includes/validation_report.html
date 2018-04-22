@@ -1,0 +1,44 @@
+<h1 id="{{report.short}}"><a name="{{report.short}}"></a>{{ report.name | capitalize}}</h1> 
+{% for mean in report.means %}
+<text class="bubble" style="color: white;">{{ mean }}</text> {% endfor %}
+{% for ts in report.testsets %}{{ ts }}</text> {% endfor %}
+
+{% if report.testset %}
+<div style="padding: 0 0 10px 0">
+{% if report.testset.interface %}
+<span class="bubble" style="color: white;">interface</span>
+{% endif %}
+{% if report.testset.vintage %}
+<span class="bubble" style="color: white;">tested</span>
+<span class="bubble" style="color: white;background-color: gray;">{{ report.testset.vintage }}</span>
+{% endif %}
+{% if report.testset.commits %}
+<span class="bubble" style="color: white;">commits</span>
+{% for com in report.testset.commits %}
+<a class="bubble" href="https://github.com/{{ com.spot }}/commit/{{ com.hash }}" style="color: white;background-color: gray;text-decoration:none;">{{ com.name }}:{{ com.hash }}</a>
+{% endfor %}
+{% endif %}
+{% if report.testset.pending %}
+<br><span class="bubble" style="color: white;">pending</span>
+<mark>{{ report.testset.pending | remove: '<p>' | remove: '</p>' }}</mark>
+{% endif %}
+</div>
+{% endif %}
+
+{% if report.testing_note %}
+<strong>Note:</strong> {{ report.testing_note }}
+{% elsif site.data.validations_times %}
+{% if site.data.validations_times[report.short] %}
+<a class="bubble_light" href="{{ site.baseurl }}/reports/#{{ site.data.validations_times[report.short] }}">tested {{ site.data.validations_times[report.short] }}</a>
+{% else %}
+<span class="bubble_light">pending test</span>
+{% endif %}
+{% endif %}
+
+{% if report.manual %}
+<strong>Instructions:</strong> {{ report.manual | replace: 'BASE_URL', site.baseurl | markdownify | remove: '<p>' | remove: '</p>' }}
+{% endif %}
+
+{% if report.guide %}
+<strong>Unit test:</strong> {{ report.guide | replace: 'BASE_URL', site.baseurl | markdownify | remove: '<p>' | remove: '</p>' }}
+{% endif %}
