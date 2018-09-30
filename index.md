@@ -25,7 +25,9 @@ tiles:
   - grouping_end: true
 ---
 
-**`BioPhysCode`** is an umbrella term for three open-source biophysical simulation analysis tools written by [Ryan Bradley](http://scattershot.info) and [Joe Jordan](https://github.com/ejjordan) in order to share our methods. Our goal is to provide all of our simulation and analysis tools to the larger research community. Each code works independently, however they are designed as a single, coherent [framework](https://en.wikipedia.org/wiki/Software_framework) so you can use them together to create novel, scalable biophysics experiments based on the popular [GROMACS](http://www.gromacs.org) integrator. [Contact the authors]({{ site.baseurl}}/contact) if you have questions, or open an issue on the github pages listed below.
+**`BioPhysCode`** is a collection of three open-source biophysical simulation analysis tools developed jointly by [Ryan Bradley](http://scattershot.info), [Joe Jordan](https://github.com/ejjordan), and [David Slochower](https://github.com/slochower) during their study at the University of Pennsylvania under the supervision of [Ravi Radhakrishnan](https://fling.seas.upenn.edu/~biophys/dynamic/wordpress/). It is currently under active development by Ryan and Joe, who are preparing a paper to accompany the forthcoming version (1.0) in the coming months.
+
+Our goal is to provide all of our simulation and analysis tools to the larger research community. Each code works independently, however they are designed as a single, coherent [framework](https://en.wikipedia.org/wiki/Software_framework) so you can use them together to create novel, scalable biophysics experiments based on the popular [GROMACS](http://www.gromacs.org) integrator. [Contact the authors]({{ site.baseurl}}/contact) if you have questions, or open an issue on the github pages listed below.
 
 We recommend starting with either the **[quickstart guide](#quickstart-guide)** or the list of **[validated codes](validation)**.
 
