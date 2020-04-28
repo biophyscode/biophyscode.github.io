@@ -92,6 +92,8 @@ make go <experiment-name>
 
 [//]: # tested above on heartland on 2020.04.22 with: source ~/factory/env.sh spack && source $(spack location -i gromacs@2019.3)/bin/GMXRC.bash
 
+[//]: # note that you cannot use the 
+
 
 The procedure above will generate log files and a summary of the commands it ran found in the `s01-protein/s01-protein.log`. We recommend running the simulation in a screen or on a scheduler if you are using a shared machine. 
 
@@ -151,7 +153,7 @@ cd path/to/many/simulations
 make -C $AMX_ROOT tether $PWD/v002
 # the new simulation is stored in a new folder
 cd v002
-# inspect the links, which point back to automacs
+# inspect the links, which point back to automacs (see example below)
 ls -all
 # confirm that we can see the experiments
 make prep
@@ -161,7 +163,19 @@ vim inputs/protein_expts.yaml
 make go protein
 ~~~
 
-[//]: # tested above on heartland on 2020.04.22 with: source ~/factory/env.sh spack && source $(spack location -i gromacs@2019.3)/bin/GMXRC.bash
+Note that each simulation will include links, via `ls -all`, back to the central automacs location.
+
+~~~
+amx -> /home/user/factory/automacs/amx
+config.json -> /home/user/factory/automacs/config.json
+inputs -> /home/user/factory/automacs/inputs
+makefile -> /home/user/factory/automacs/makefile
+ortho -> /home/user/factory/automacs/ortho
+~~~
+
+[//]: # tested above on heartland on 2020.04.22 with: source ~/work/factory/env.sh spack && source $(spack location -i gromacs@2019.3)/bin/GMXRC.bash
+
+[//]: # !!! the `make setup all` step above fails silently without gromacs
 
 See the overview below for more details on how to set up your experiments files.
 
