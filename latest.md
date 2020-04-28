@@ -158,7 +158,7 @@ ls -all
 # confirm that we can see the experiments
 make prep
 # edit an experiments file to set up the simulation
-vim inputs/protein_expts.yaml
+vim inputs/proteins/protein_expts.yaml
 # step 7: run the simulation by name
 make go protein
 ~~~
